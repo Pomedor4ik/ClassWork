@@ -7,25 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="./basket-svgrepo-com.svg" alt="">
-    <div class="cart-note">
-        <span id="cartNoteTitle"></span>
-    </div>
-    <h1>SHOP</h1>
-    <h2 id="balance">balance: 15 000грн</h2>
-    <div class="products">
-        <div class="product1">
-            <img class="img1" src="./iphone-svgrepo-com.svg" alt="">
-            <p>10 000 грн</p>
-            <button class="btn1" data-title="iPhone">Buy</button>
+    <div class="head">
+        <p class="myShop">MY SHOP</p>
+        <table>
+            <tr id="timeRow">
+                <td class="time-td" id="hoursCell"></td>
+                <td class="time-td" id="minutesCell"></td>
+                <td class="time-td" id="secondsCell"></td>
+            </tr>
+        </table>
+        <div>
+            <p class="balance"></p>
+            <div class="form">
+                <input id="inputBalance" placeholder="Write new value">
+                <button class="btnBalance">Add</button>
+            </div>
         </div>
-        <div class="product1">
-            <img class="img1" src="./laptop-material-4-svgrepo-com.svg" alt="">
-            <p>20 000 грн</p>
-            <button class="btn1" data-title="Laptop">Buy</button>
-        </div>
+        
     </div>
     
+    
+
+    <h1 class="title">Products</h1>
+    <div class="productsList list"></div>
+    <h1 class="title"><img src="./basket-svgrepo-com.svg" alt=""></h1>
+    <div class="bucketList list"></div>
     <script src="./script.js"></script>
 </body>
 </html>
