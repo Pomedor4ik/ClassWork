@@ -64,3 +64,119 @@ table{
     width: 50px;
     font-size: 26px;
 }
+
+.first-block{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  margin-top: 20px;
+}
+.logo-container{
+  width: 30%;
+  padding-left: 100px;
+  padding-top: 10px;
+}
+.input-search-container{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+.inputSearch{
+  width: 500px;
+  height: 30px;
+  border-radius: 3px;
+}
+.btnSearch{
+  height: 35px;
+  background: none;
+}
+
+.contacts-block{
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.head{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.myShop{
+    font-size: 30px;
+    padding-left: 70px;
+}
+.title {
+    text-align: center;
+}
+.balance{ 
+    text-align: center;
+    font-size: 32px;
+}
+.form{
+    width: 30%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+    margin: 20px 0;
+}
+.product{ 
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+    border: 2px solid teal;
+}
+.name{ 
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+}
+.price{ 
+    margin: 25px 0;
+    text-align: center;
+    font-size: 21px;
+    font-family: 500;
+    color: #333;
+}
+.btnAdd{ 
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin: 20px auto;
+}
+.count{ 
+    width: 50px;
+    height: 27px;
+    margin: 25px 0 0 65px;
+    text-align: center;
+    font-size: 21px;
+    color: blue;
+    
+}
+table{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    padding-left: 60px;
+}
+.time-td{
+    width: 50px;
+    font-size: 26px;
+}
+
+.btnAddAll{
+    width: 170px;
+    height: 40px;
+    margin-left: 15px;
+}
