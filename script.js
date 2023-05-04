@@ -65,19 +65,25 @@ const removeProduct = (idToRemove) => {
 }
 
 
-
-
-
 // =
 
 const removeBucket = (idToRemove) => {
-    bucketStore = bucketStore.filter(bucketItem => {
-        if(bucketItem.id != idToRemove){
-            return bucketItem
+    const indexToRemove = findItemInArray(bucketStore, idToRemove);
+    if (indexToRemove !== undefined) {
+        const itemToRemove = bucketStore[indexToRemove];
+        bucketStore.splice(indexToRemove, 1);
+        generateBucket();
+        setBalance(parseInt(localStorage.getItem('balance')) + itemToRemove.price);
+        const productElement = document.querySelector(`#product-${idToRemove}`);
+        if (productElement) {
+            const countElement = productElement.querySelector('.count');
+            if (countElement) {
+                const count = parseInt(countElement.textContent.split(':')[1].trim());
+                productElement.querySelector('.count').textContent = `Count: ${count + 1}`;
+            }
         }
-    })
-    generateBucket()
-}
+    }
+};
 
 const findItemInArray = (array, id) => { 
     let currentIndex
@@ -173,7 +179,6 @@ const generateProducts = () => {
 const generateBucket = () => { 
     bucketList.innerHTML = ''
     bucketStore.forEach((bucketItem) => { 
-        console.log(bucketItem)
         bucketList.innerHTML += `
         <div id="bucket-${bucketItem.id}" class="product">
             <p class="name">${bucketItem.name}</p>
@@ -185,17 +190,8 @@ const generateBucket = () => {
     let btnsRemove = document.querySelectorAll('.btnRemove')
     btnsRemove.forEach((btnItem)=> {
         btnItem.addEventListener('click', () => {
-            let currentId = parseInt(btnItem.parentNode.id.substring(7))
-        productsStore = [
-            ...productsStore, 
-            {...bucketStore[findItemInArray(bucketStore, currentId)]}
-        ]
-        let balanceCurrent = parseInt(localStorage.getItem('balance'))
-        let price = bucketStore[findItemInArray(bucketStore, currentId)].price
-        setBalance(balanceCurrent+price)
-        removeBucket(currentId)
-        generateProducts()
-        
+            let currentId = parseInt(btnItem.parentNode.id.substring(7));
+            removeBucket(currentId);
         })
     })
 }
