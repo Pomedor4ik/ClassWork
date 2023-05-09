@@ -51,11 +51,24 @@ const form = {
     btnSend: document.querySelector('button[form-btn = "send"]'),
 }
 
+// let tempForm = JSON.parse(localStorage.getItem('form'))
+
+// if (tempForm.name){ 
+//     formData = JSON.parse(localStorage.getItem('form'))
+//     form.name.value = formData.name ? formData.name : ''
+//     form.email.value = formData.email ? formData.email : ''
+//     form.password.value = formData.password ? formData.password : ''
+// } else { 
+//     localStorage.setItem('form', JSON.stringify({}))
+// }
+
+
+
 if (localStorage.getItem('form')){ 
     formData = JSON.parse(localStorage.getItem('form'))
-    form.name.value = formData.name
-    form.email.value = formData.email
-    form.password.value = formData.password
+    form.name.value = formData.name  ? formData.name : ''
+    form.email.value = formData.email ? formData.email : ''
+    form.password.value = formData.password ? formData.password : ''
 } else { 
     localStorage.setItem('form', JSON.stringify({}))
 }
