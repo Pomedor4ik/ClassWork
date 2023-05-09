@@ -5,8 +5,8 @@
     align-items: center;
 }
 .myShop{
+    width: 370px;
     font-size: 30px;
-    padding-left: 70px;
 }
 .title {
     text-align: center;
@@ -29,7 +29,7 @@
     margin: 20px 0;
 }
 .product{ 
-    width: 200px;
+    width: 200px;   
     height: 200px;
     padding: 10px;
     border: 2px solid teal;
@@ -165,7 +165,7 @@ table{
     
 }
 table{
-    width: 200px;
+    width: 400px;
     display: flex;
     justify-content: center;
     padding-left: 60px;
@@ -179,4 +179,8 @@ table{
     width: 170px;
     height: 40px;
     margin-left: 15px;
+}
+
+.reg{
+    width: 20px;
 }

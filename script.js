@@ -65,25 +65,25 @@ const removeProduct = (idToRemove) => {
 }
 
 
-// =
-
 const removeBucket = (idToRemove) => {
-    const indexToRemove = findItemInArray(bucketStore, idToRemove);
+    const indexToRemove = findItemInArray(bucketStore, idToRemove)
     if (indexToRemove !== undefined) {
-        const itemToRemove = bucketStore[indexToRemove];
-        bucketStore.splice(indexToRemove, 1);
-        generateBucket();
-        setBalance(parseInt(localStorage.getItem('balance')) + itemToRemove.price);
-        const productElement = document.querySelector(`#product-${idToRemove}`);
-        if (productElement) {
-            const countElement = productElement.querySelector('.count');
-            if (countElement) {
-                const count = parseInt(countElement.textContent.split(':')[1].trim());
-                productElement.querySelector('.count').textContent = `Count: ${count + 1}`;
+        const itemToRemove = bucketStore[indexToRemove]
+        bucketStore.splice(indexToRemove, 1)
+        generateBucket()
+        setBalance(parseInt(localStorage.getItem('balance')) + itemToRemove.price)
+        
+        productsStore.forEach(product => {
+               
+            if (product.id == idToRemove) {
+                product.count = product.count + 1
+                return product
             }
-        }
+        })
+        generateProducts()
+
     }
-};
+}
 
 const findItemInArray = (array, id) => { 
     let currentIndex
